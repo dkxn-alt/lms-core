@@ -17,11 +17,11 @@ export class MembersController {
     return this.membersService.createMember(memberData);
   }
 
-  @Patch()
+  @Patch(':id')
   async updateMember(
     @Param('id') id: string,
     @Body() memberData: UpdateMemberDto,
-  ): Promise<membersModel> {
+  ) {
     return this.membersService.updateMember(id, memberData);
   }
 }

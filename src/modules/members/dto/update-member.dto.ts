@@ -3,14 +3,14 @@ import { IsString, IsEmail, IsOptional } from 'class-validator';
 export class UpdateMemberDto {
   @IsOptional()
   @IsString()
-  name: string;
+  name?: string;
 
   @IsOptional()
   @IsEmail()
-  email: string;
+  email?: string;
 
   @IsOptional()
-  active: boolean;
+  active?: boolean;
 }
 
 // model members {
