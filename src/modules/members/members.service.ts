@@ -10,6 +10,17 @@ export class MembersService {
       data,
     });
   }
+  async updateMember(
+    id: string,
+    data: Prisma.membersUpdateInput,
+  ): Promise<members> {
+    return this.prisma.members.update({
+      where: {
+        id,
+      },
+      data,
+    });
+  }
   async getMembers(): Promise<members[]> {
     return this.prisma.members.findMany();
   }
