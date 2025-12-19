@@ -24,4 +24,12 @@ export class MembersService {
   async getMembers(): Promise<members[]> {
     return this.prisma.members.findMany();
   }
+
+  async getMemberDetails(id: string): Promise<members | null> {
+    // mby possible use queryRaw?
+    // return this.prisma.$queryRaw`SELECT * FROM members WHERE id = ${id}`;
+    return this.prisma.members.findUnique({
+      where: { id },
+    });
+  }
 }
